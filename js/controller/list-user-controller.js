@@ -1,0 +1,1 @@
+angular.module('ares').controller("ListUserController", ['$scope', 'User', function($scope, User){  $scope.invites = [];	User.List().then(function(data){    $scope.invites = data.data;  });}]);

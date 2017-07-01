@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="ares">
+   <head>
+      <title> ARES </title>
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+      <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+      
+      <script type="text/javascript" src="js/app.js"></script>
+      <script type="text/javascript" src="js/route.js"></script>
+
+      <!-- Controllers -->
+      <script type="text/javascript" src="js/controller/list-user-controller.js"></script>
+      <script type="text/javascript" src="js/controller/card-controller.js"></script>
+
+      <!-- Services -->
+      <script type="text/javascript" src="js/services/user.js"></script>
+
+      <link rel="stylesheet" type="text/css" href="assets/style.css">
+   </head>
+      <body>
+         <ng-view></ng-view>
+      </body>
+</html> 

@@ -1,0 +1,2 @@
+angular.module("ares", 
+	['ngRoute']);
