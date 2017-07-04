@@ -1,14 +1,24 @@
 <h1> Lista </h1>
 <label>Search: <input ng-model="searchText"></label>
-<table>
-  <tr>
-    <th>  </th>
-    <th> Nombre </th>
-    <th> Email </th>
-  </tr>
-  <tr ng-repeat="invited in invites | filter:searchText">
-    <td> {{$index + 1}}</td>
-    <td> <a href="#!list/{{invited.id}}"> {{invited.full_name}}</a> </td>
-    <td> <p> {{invited.email}} </p> </td>
-  </tr>
-</table>
+<button ng-click="exportData()">Export</button>
+<p ng-click="change()"><strong> RT : {{th}}</strong></p>
+<div id="exportable">
+  <table class="table">
+    <tr>
+      <th>  </th>
+      <th> Nombre </th>
+      <th> Email </th>
+      <th> Sesión 1 </th>
+      <th> Sesión 2 </th>
+      <th> Sesión 3 </th>
+    </tr>
+    <tr ng-repeat="invited in invites | filter:searchText">
+      <td> {{$index + 1}}</td>
+      <td> <a href="#!list/{{invited.id}}"> {{invited.full_name}}</a> </td>
+      <td> <p> {{invited.email}} </p> </td>
+      <td> <p> {{invited.activities[0].assisted}} </p></td>
+      <td> <p> {{invited.activities[1].assisted}} </p></td>
+      <td> <p> {{invited.activities[2].assisted}} </p></td>
+    </tr>
+  </table>
+</div>
