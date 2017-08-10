@@ -14,7 +14,7 @@ angular.module("ares")
   })
   .when('/events/new',{
       templateUrl: 'templates/event/new.html',
-      controller: 'ActivitiesCreateController'
+      controller: 'EventCreateController'
   })
   .when('/events/:id',{
       templateUrl: 'templates/event/show.html',

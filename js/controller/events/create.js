@@ -1,10 +1,11 @@
 angular.module('ares')
-.controller("EventCreateController", ['$scope', '$routeParams', 'Event', function($scope, $routeParams, Event){
+.controller("EventCreateController", ['$scope', '$routeParams', '$location', 'Event', function($scope, $routeParams, $location, Event){
 
   $scope.event = {}
 
   $scope.add = function(event){
-    Event.create(event);
-    $location.path("/");
+    Event.Create(event);
+    console.log(event);
+    $location.path("/events");
   }
 }]);
