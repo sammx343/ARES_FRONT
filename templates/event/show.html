@@ -1,0 +1,9 @@
+<h2> Evento </h2>
+
+<h3> {{event.name}}</h3>
+<p> {{event.initial_date}}</p>
+<p> {{event.final_date}}</p>
+<a href="{{event.url}}"> Ingresa aquí: Página del evento </a>
+<div class="container">
+  <a ng-repeat="activity in event.activities" href="#!/activities/{{activity.id}}"> {{activity.name}} </p>
+</div>

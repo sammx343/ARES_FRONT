@@ -1,0 +1,16 @@
+<h3> Crear Evento </h3>
+
+<form novalidate>
+  Name:<br>
+  <input type="text" ng-model="event.name"><br>
+  Fecha de Inicio:<br>
+  <input type="date" ng-model="event.initial_date"><br>
+  Fecha de Finalización:<br>
+  <input type="date" ng-model="event.final_date"><br>
+  Logo: <br>
+  <input type="text" ng-model="event.logo"><br>
+  Url del evento: <br>
+  <input type="text" ng-model="event.url"><br>
+  <br><br>
+  <button ng-click="new(event)">Ok</button>
+</form>

@@ -12,18 +12,32 @@
       
       <script type="text/javascript" src="js/app.js"></script>
       <script type="text/javascript" src="js/route.js"></script>
+      <script type="text/javascript" src="js/tools.js"></script>
 
       <!-- Controllers -->
       <script type="text/javascript" src="js/controller/list-user-controller.js"></script>
       <script type="text/javascript" src="js/controller/card-controller.js"></script>
 
+         <!-- Events -->
+         <script type="text/javascript" src="js/controller/events/index.js"></script>
+         <script type="text/javascript" src="js/controller/events/show.js"></script>
+         <script type="text/javascript" src="js/controller/events/create.js"></script>
+
+         <!-- Activities -->
+         <script type="text/javascript" src="js/controller/activities/show.js"></script>
+
       <!-- Services -->
       <script type="text/javascript" src="js/services/user.js"></script>
+      <script type="text/javascript" src="js/services/event.js"></script>
+      <script type="text/javascript" src="js/services/activity.js"></script>
       
       <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
       <link rel="stylesheet" type="text/css" href="assets/style.css">
    </head>
       <body>
-         <ng-view></ng-view>
+         <h1> ARES </h1>
+         <div class="container">
+           <ng-view></ng-view>
+         </div>
       </body>
 </html> 

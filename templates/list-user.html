@@ -1,24 +1,42 @@
-<h1> Lista </h1>
+<h2> Lista </h2>
 <label>Search: <input ng-model="searchText"></label>
 <button ng-click="exportData()">Export</button>
 <p ng-click="change()"><strong> RT : {{th}}</strong></p>
+
 <div id="exportable">
-  <table class="table">
+  <p> Sesión 1 : {{sessions[0]}}</p>
+  <p> Sesión 2 : {{sessions[1]}}</p>
+  <p> Sesión 3 : {{sessions[2]}}</p>
+
+  <table class="table table-bordered">
     <tr>
       <th>  </th>
       <th> Nombre </th>
       <th> Email </th>
       <th> Sesión 1 </th>
+      <th> Hora de Entrada </th>
       <th> Sesión 2 </th>
+      <th> Hora de Entrada </th>
       <th> Sesión 3 </th>
+      <th> Hora de Entrada </th>
     </tr>
     <tr ng-repeat="invited in invites | filter:searchText">
-      <td> {{$index + 1}}</td>
+      <th scope="row"> {{$index + 1}}</td>
       <td> <a href="#!list/{{invited.id}}"> {{invited.full_name}}</a> </td>
+
       <td> <p> {{invited.email}} </p> </td>
       <td> <p> {{invited.activities[0].assisted}} </p></td>
+      <td> 
+        <p ng-if="invited.activities[0].assisted == 1"> {{invited.activities[0].updated_at | date:'short'}} </p>
+      </td>
       <td> <p> {{invited.activities[1].assisted}} </p></td>
+      <td > 
+        <p ng-if="invited.activities[1].assisted == 1"> {{invited.activities[1].updated_at | date:'short'}} </p>
+      </td>
       <td> <p> {{invited.activities[2].assisted}} </p></td>
+      <td > 
+        <p ng-if="invited.activities[2].assisted == 1"> {{invited.activities[2].updated_at | date:'short'}} </p>
+      </td>
     </tr>
   </table>
 </div>

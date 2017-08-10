@@ -1,8 +1,8 @@
 angular.module('ares')
-.factory('User', ['$http', function TopFactory($http){
+.factory('User', ['$http',  'URL', function UserFactory($http, URL){
   return {
     List: function(){
-      return $http({method: 'GET', url: 'http://ares-uninorte.herokuapp.com/api/v1/users'})
+      return $http({method: 'GET', url: URL.LINK + "/users"})
     },
     Get : function(id, invites){
       return invites.filter(function(invited){
