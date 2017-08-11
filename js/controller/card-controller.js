@@ -7,5 +7,6 @@ angular.module('ares')
 
     $scope.invites = data.data;
     $scope.invited = User.Get($routeParams.id, $scope.invites)[0]; 
+    console.log($scope.invited.qr);
   });
 }]);

@@ -32,12 +32,49 @@
       <script type="text/javascript" src="js/services/activity.js"></script>
       
       <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+      <link rel="stylesheet" type="text/css" href="bower_components/bootstrap-sweetalert/dist/sweetalert.css">
       <link rel="stylesheet" type="text/css" href="assets/style.css">
+      <link rel="stylesheet" type="text/css" href="assets/form_style.css">
    </head>
       <body>
-         <h1> ARES </h1>
-         <div class="container">
-           <ng-view></ng-view>
-         </div>
-      </body>
+         <nav class="navbar navbar-default">
+            <div class="container content">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                  <h1>ARES</h1>
+                </a>
+              </div>
+              <div class="nav navbar-right navbar-text">
+                <div class="sign">
+                  <a href="https://fb.com" title="login-fb" class="btn btn-twitter btn-lg"><i class="fa fa-twitter fa-fw"></i> Login</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+    
+          <div class="container">
+            <div class="row">
+              <div class="content">
+                <section class="col-sm-3 sidebar-module-inset">
+                  <ul>
+                    <li> <a href=" " > Dashboard </a></li>
+                    <li> <a href="#!users/" > Usuarios </a> </li>
+                    <li> <a href="#!events/"> Eventos </a> </li>
+                  </ul>
+                    
+                </section>
+                <section class="col-lg-9 blog-main">
+                  <!--<div class="search">
+                    <div class="row">
+                      <h3 class="col-md-4"> Buscar </h3>
+                      <input type="text" class="col-sm-5" placeholder="Ejemplo ...Cátedra Europa">
+                      <button class="btn btn-default" type="button"> Aceptar </button>
+                    </div>
+                  </div>-->
+                  <ng-view></ng-view>
+                </section>
+              </div>
+            </div>
+          </div>
+       </body>
 </html> 

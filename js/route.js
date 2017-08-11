@@ -1,9 +1,13 @@
 angular.module("ares")
 .config(function($routeProvider){
-	$routeProvider.when('/', {
+	$routeProvider.when('/' , {
 		templateUrl: 'templates/list-user.html',
 		controller: 'ListUserController'
 	})
+  .when('/users',{
+      templateUrl: 'templates/list-user.html',
+      controller: 'ListUserController'
+  })
   .when('/list/:id',{
       templateUrl: 'templates/card.html',
       controller: 'CardController'

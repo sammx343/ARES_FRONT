@@ -7,4 +7,8 @@ angular.module('ares')
 
     $scope.event = data.data.event;
   });
+
+  var deleteEvent = function(){
+    alert("mama mia!");
+  };
 }]);

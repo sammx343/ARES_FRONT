@@ -1,5 +1,5 @@
-<h3> Crear Evento </h3>
-
+<h2> Crear Evento </h2>
+<!--
 <form novalidate>
   Name:<br>
   <input type="text" ng-model="event.name"><br>
@@ -14,3 +14,65 @@
   <br><br>
   <button ng-click="add(event)">Ok</button>
 </form>
+-->
+
+<form class="well form-horizontal" action=" " method="post"  id="contact_form">
+  <div class="form-group">
+    <label class="col-md-4 control-label" > Nombre del Evento</label> 
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input name="last_name" placeholder="Nombre" class="form-control"  type="text" ng-model="event.name">
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-4 control-label" > Fecha de Inicio </label> 
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input name="last_name" placeholder="Nombre" class="form-control"  type="date" ng-model="event.initial_date">
+      </div>
+    </div>
+  </div>
+
+   <div class="form-group">
+    <label class="col-md-4 control-label" > Fecha de Finalización </label> 
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input name="last_name" placeholder="Nombre" class="form-control"  type="date" ng-model="event.final_date">
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-4 control-label" > Logo </label> 
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input name="last_name" placeholder="Logo" class="form-control"  type="text" ng-model="event.logo">
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-4 control-label" > URL </label> 
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input name="last_name" placeholder="URL" class="form-control"  type="text" ng-model="event.url">
+      </div>
+    </div>
+  </div>
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4">
+    <button type="submit" class="btn btn-warning" ng-click="add(event)" >Aceptar <span class="glyphicon glyphicon-send"></span></button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+</div>

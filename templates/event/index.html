@@ -1,5 +1,13 @@
 <a href="#!events/new"> Crear Evento </a>
-<h2> Eventos </h2>
-<div>
+
+<div class="popular-places">
+  <h2> Eventos </h2>
+  <div class="places">
+    <div class=" col-md-6 place" ng-repeat="event in events">
+        <a href="#!events/{{event.id}}"> <h4> {{event.name}}</h4></a>
+        <p> Fecha de Inicio: {{event.initial_date | date:'medium'}} </p>
+        <p> Fecha de Finalización: {{event.final_date | date:'medium'}} </p>
+        <p> {{event.url}}</p>
+    </div>
+  </div>
 </div>
-<p ng-repeat="event in events">  <a href="#!events/{{event.id}}"> {{event.name}} </a></p>

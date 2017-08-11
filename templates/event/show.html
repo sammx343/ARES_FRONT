@@ -1,9 +1,18 @@
-<h2> Evento </h2>
-
-<h3> {{event.name}}</h3>
-<p> {{event.initial_date}}</p>
-<p> {{event.final_date}}</p>
+<h2> {{event.name}}</h2>
+<p> Fecha de Inicio: {{event.initial_date | date:'medium'}} </p>
+<p> Fecha de Finalización: {{event.final_date | date:'medium'}} </p>
 <a href="{{event.url}}"> Ingresa aquí: Página del evento </a>
-<div class="container">
-  <a ng-repeat="activity in event.activities" href="#!/activities/{{activity.id}}"> {{activity.name}} </p>
+
+<div class="list-group">
+  <a ng-repeat="activity in event.activities" href="#!/activities/{{activity.id}}" class="list-group-item">
+    <h4 class="list-group-item-heading"> {{activity.name}} </h4>
+    <p class="list-group-item-text"> Hora de Inicio: {{activity.initial_time | date:'medium'}}</p>
+    <p class="list-group-item-text"> Hora de Finalización: {{activity.final_time | date:'medium'}}</p>
+    <p class="list-group-item-text"> Capacidad Max.: {{activity.quota}}</p>
+    <p class="list-group-item-text"> Capacidad Actual: {{activity.current_quota}}</p>
+  </a>
+</div>
+
+<div class="slide-bottom-change">
+  <button type="submit" class="btn btn-danger" ng-click="deleteEvent()" >Eliminar Evento </button>
 </div>
