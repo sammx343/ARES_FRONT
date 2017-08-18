@@ -10,6 +10,12 @@ angular.module('ares')
     },
     Create : function(event){
       return $http({method: 'POST', url: URL.LINK + "/events/", data: {event}})
+    },
+    Update : function(event, id){
+      return $http({method: 'PATCH', url: URL.LINK + "/events/" + id, data: {event}})
+    },
+    Delete : function(id){
+      return $http({method: 'DELETE', url: URL.LINK + "/events/" + id, data: {event}})
     }
   }
 }]);

@@ -24,9 +24,13 @@ angular.module("ares")
       templateUrl: 'templates/event/show.html',
       controller: 'EventShowController'
   })
-  .when('/activities/:id',{
-      templateUrl: 'templates/activity/show.html',
-      controller: 'ActivitiesShowController'
+  .when('/events/edit/:id',{
+      templateUrl: 'templates/event/update.html',
+      controller: 'EventUpdateController'
+  })
+  .when('/events/:id/activities/new',{
+      templateUrl: 'templates/activity/new.html',
+      controller: 'ActivityCreateController'
   })
   .when('/activities/:id',{
       templateUrl: 'templates/activity/show.html',

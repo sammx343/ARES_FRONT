@@ -3,3 +3,7 @@
 <h3> {{activity.name}}</h3>
 <p> {{activity.description}}</p>
 <p> Lugar: {{activity.place}}</p>
+<p class="list-group-item-text"> Hora de Inicio: {{activity.initial_time | date:'medium'}}</p>
+<p class="list-group-item-text"> Hora de Finalización: {{activity.final_time | date:'medium'}}</p>
+<p class="list-group-item-text"> Capacidad Max.: {{activity.quota}}</p>
+<p class="list-group-item-text"> Capacidad Actual: {{activity.current_quota}}</p>

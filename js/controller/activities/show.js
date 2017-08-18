@@ -3,9 +3,7 @@ angular.module('ares')
 
   $scope.activity = {}
 
-  Activity.show($routeParams.id).then(function(data){
-    
+  Activity.Show($routeParams.id).then(function(data){
     $scope.activity = data.data.activity;
-    console.log($scope.activity);
   });
 }]);

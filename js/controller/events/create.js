@@ -1,5 +1,6 @@
 angular.module('ares')
-.controller("EventCreateController", ['$scope', '$routeParams', '$location', 'Event', function($scope, $routeParams, $location, Event){
+.controller("EventCreateController", ['$scope', '$route' ,'$routeParams', '$location', 'Event', 
+function($scope, $route ,$routeParams, $location, Event){
 
   $scope.event = {}
 
@@ -7,5 +8,6 @@ angular.module('ares')
     Event.Create(event);
     console.log(event);
     $location.path("/events");
+    $route.reload();
   }
 }]);

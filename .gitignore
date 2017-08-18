@@ -1,1 +1,32 @@
-bower_components
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+#Logs and DB's #
+############
+*.log
+*.sql
+*.sqlite
+
+# OS generated #
+############
+.DS_Store
+.DS_Store?
+._*
+.Trashes
+
+# Build Systems #
+############
+bower_components/
+node_modules/
+.sass-cache
+*.css.map
+build/
+dist/

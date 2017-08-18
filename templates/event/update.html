@@ -1,6 +1,6 @@
-<h2> Crear Evento </h2>
+<h2> Editar Evento </h2>
 
-<form class="well form-horizontal" action=" " method="post"  id="contact_form">
+<form class="well form-horizontal" action=" " method="path"  id="contact_form">
   <div class="form-group">
     <label class="col-md-4 control-label" > Nombre del Evento</label> 
       <div class="col-md-4 inputGroupContainer">
@@ -16,7 +16,7 @@
       <div class="col-md-4 inputGroupContainer">
       <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-    <input name="last_name" placeholder="Nombre" class="form-control"  type="date" ng-model="event.initial_date">
+    <input name="last_name" placeholder="Nombre" class="form-control"  type="date" value="{{date1}}" ng-model="event.initial_date">
       </div>
     </div>
   </div>
@@ -26,7 +26,7 @@
       <div class="col-md-4 inputGroupContainer">
       <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-    <input name="last_name" placeholder="Nombre" class="form-control"  type="date" ng-model="event.final_date">
+    <input name="last_name" placeholder="Nombre" class="form-control"  type="date" value="{{date2}}" ng-model="event.final_date">
       </div>
     </div>
   </div>
@@ -36,7 +36,7 @@
       <div class="col-md-4 inputGroupContainer">
       <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-    <input name="last_name" placeholder="Logo" class="form-control"  type="text" ng-model="event.logo">
+    <input name="last_name" placeholder="Logo" class="form-control"  type="text" ng-model="event.logo.url">
       </div>
     </div>
   </div>
@@ -53,7 +53,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4">
-    <button type="submit" class="btn btn-warning" ng-click="add(event)" >Aceptar <span class="glyphicon glyphicon-send"></span></button>
+    <button type="submit" class="btn btn-warning" ng-click="update(event)" >Aceptar <span class="glyphicon glyphicon-send"></span></button>
   </div>
 </div>
 
