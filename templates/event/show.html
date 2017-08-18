@@ -13,7 +13,7 @@
 <a href="{{event.url}}"> Ingresa aquí: Página del evento </a>
 
 <div class="list-group">
-  <a ng-repeat="activity in event.activities" href="#!/activities/{{activity.id}}" class="list-group-item">
+  <a ng-repeat="activity in event.activities" href="#!events/{{event.id}}/activities/{{activity.id}}" class="list-group-item">
     <h4 class="list-group-item-heading"> {{activity.name}} </h4>
     <p class="list-group-item-text"> Hora de Inicio: {{activity.initial_time | date:'medium'}}</p>
     <p class="list-group-item-text"> Hora de Finalización: {{activity.final_time | date:'medium'}}</p>

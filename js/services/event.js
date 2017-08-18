@@ -15,7 +15,7 @@ angular.module('ares')
       return $http({method: 'PATCH', url: URL.LINK + "/events/" + id, data: {event}})
     },
     Delete : function(id){
-      return $http({method: 'DELETE', url: URL.LINK + "/events/" + id, data: {event}})
+      return $http({method: 'DELETE', url: URL.LINK + "/events/" + id})
     }
   }
 }]);

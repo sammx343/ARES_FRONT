@@ -32,7 +32,7 @@ angular.module("ares")
       templateUrl: 'templates/activity/new.html',
       controller: 'ActivityCreateController'
   })
-  .when('/activities/:id',{
+  .when('/events/:event_id/activities/:id',{
       templateUrl: 'templates/activity/show.html',
       controller: 'ActivitiesShowController'
   })

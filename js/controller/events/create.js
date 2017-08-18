@@ -2,7 +2,7 @@ angular.module('ares')
 .controller("EventCreateController", ['$scope', '$route' ,'$routeParams', '$location', 'Event', 
 function($scope, $route ,$routeParams, $location, Event){
 
-  $scope.event = {}
+  $scope.event = {};
 
   $scope.add = function(event){
     Event.Create(event);

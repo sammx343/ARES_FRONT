@@ -7,3 +7,7 @@
 <p class="list-group-item-text"> Hora de Finalización: {{activity.final_time | date:'medium'}}</p>
 <p class="list-group-item-text"> Capacidad Max.: {{activity.quota}}</p>
 <p class="list-group-item-text"> Capacidad Actual: {{activity.current_quota}}</p>
+
+<div class="slide-bottom-change">
+  <button type="submit" class="btn btn-danger" ng-click="deleteActivity()">Eliminar Evento </button>
+</div>
