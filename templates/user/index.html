@@ -1,0 +1,20 @@
+
+<a href="#!events/new"> Agregar Usuario </a>
+<h2> Lista </h2>
+<label>Search: <input ng-model="searchText"></label>
+<button ng-click="exportData()">Export</button>
+
+<div id="exportable">
+  <table class="table table-bordered">
+    <tr>
+      <th> No. </th>
+      <th> Nombre </th>
+      <th> Email </th>
+    </tr>
+    <tr ng-repeat="invited in invites | filter:searchText">
+      <th scope="row"> {{$index + 1}}</td>
+      <td> <a href="#!list/{{invited.id}}"> {{invited.full_name}}</a> </td>
+      <td> <p> {{invited.email}} </p> </td>
+    </tr>
+  </table>
+</div>

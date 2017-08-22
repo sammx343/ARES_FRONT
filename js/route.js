@@ -1,12 +1,12 @@
 angular.module("ares")
 .config(function($routeProvider){
 	$routeProvider.when('/' , {
-		templateUrl: 'templates/list-user.html',
-		controller: 'ListUserController'
+    templateUrl: 'templates/event/index.html',
+    controller: 'EventIndexController'
 	})
   .when('/users',{
-      templateUrl: 'templates/list-user.html',
-      controller: 'ListUserController'
+      templateUrl: 'templates/user/index.html',
+      controller: 'UserIndexController'
   })
   .when('/list/:id',{
       templateUrl: 'templates/card.html',

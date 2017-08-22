@@ -1,6 +1,6 @@
 angular.module('ares')
 .controller("EventShowController", ['$scope', '$route', '$routeParams', '$location', 'Event', 
-function($scope, $route, $routeParams, $location, Event){
+function($scope, $route, $routeParams, $location, Event, URL){
 
   console.log($routeParams.id);
   $scope.event = {}
