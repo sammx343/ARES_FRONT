@@ -36,4 +36,8 @@ angular.module("ares")
       templateUrl: 'templates/activity/show.html',
       controller: 'ActivitiesShowController'
   })
+  .when('/events/:event_id/activities/:id/edit',{
+      templateUrl: 'templates/activity/update.html',
+      controller: 'ActivitiesUpdateController'
+  })
 });

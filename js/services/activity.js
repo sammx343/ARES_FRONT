@@ -10,8 +10,9 @@ angular.module('ares')
       alert(URL.LINK + "/activities");*/
       return $http({method: 'POST', url: URL.LINK + "/activities", data: {activity}})
     },
-    Update : function(event, id){
-      return $http({method: 'PATCH', url: URL.LINK + "/events/" + id, data: {event}})
+    Update : function(activity, id){
+      console.log("llega en esta vuelta");
+      return $http({method: 'PATCH', url: URL.LINK + "/activities/" + id, data: {activity}})
     },
     Delete : function(id){
       return $http({method: 'DELETE', url: URL.LINK + "/activities/" + id})
