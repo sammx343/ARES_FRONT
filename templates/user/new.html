@@ -2,7 +2,7 @@
 
 <form class="well form-horizontal" id="contact_form">
   <div class="form-group">
-    <label class="col-md-4 control-label" > Nombre: </label> 
+    <label class="col-md-4 control-label" > Nombres: </label> 
       <div class="col-md-4 inputGroupContainer">
       <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -12,7 +12,37 @@
   </div>
 
   <div class="form-group">
-    <label class="col-md-4 control-label" > Identificación: </label> 
+    <label class="col-md-4 control-label" > Apellidos: </label> 
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input name="last_name" placeholder="Nombre" class="form-control"  type="text" ng-model="event.name">
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-4 control-label" > No. Identificación: </label> 
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input name="last_name" placeholder="Nombre" class="form-control"  type="text" ng-model="event.initial_date">
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-4 control-label" > Tipo de Documento: </label> 
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <select name="last_name" placeholder="Nombre" class="form-control"  ng-options="type for type in id_type" ng-model="event.initial_date"></select>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-4 control-label" > País: </label> 
       <div class="col-md-4 inputGroupContainer">
       <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -22,11 +52,41 @@
   </div>
 
    <div class="form-group">
-    <label class="col-md-4 control-label" > Corréo Electrónico </label> 
+    <label class="col-md-4 control-label" > Corréo Electrónico: </label> 
       <div class="col-md-4 inputGroupContainer">
       <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
     <input name="last_name" placeholder="Nombre" class="form-control"  type="date" ng-model="event.final_date">
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-4 control-label" > Rol: </label> 
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input name="last_name" placeholder="Nombre" class="form-control"  type="text" ng-model="event.final_date">
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-4 control-label"> Contraseña </label> 
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input name="last_name" placeholder="Nombre" class="form-control"  type="password" ng-model="event.final_date">
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-4 control-label"> Confirmar Contraseña </label> 
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input name="last_name" placeholder="Nombre" class="form-control"  type="password" ng-model="event.final_date">
       </div>
     </div>
   </div>

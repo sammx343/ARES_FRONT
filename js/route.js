@@ -8,6 +8,10 @@ angular.module("ares")
       templateUrl: 'templates/user/index.html',
       controller: 'UserIndexController'
   })
+  .when('/users/new',{
+      templateUrl: 'templates/user/new.html',
+      controller: 'UserCreateController'
+  })
   .when('/list/:id',{
       templateUrl: 'templates/card.html',
       controller: 'CardController'

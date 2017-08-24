@@ -8,6 +8,9 @@ angular.module('ares')
       return invites.filter(function(invited){
         return invited.id == id;
       })
+    },
+    Create : function(user){
+      return $http({method: 'POST', url: URL.LINK + "/users", data: {user}})
     }
   }
 }]);
