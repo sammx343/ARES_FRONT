@@ -6,7 +6,7 @@
       <div class="col-md-4 inputGroupContainer">
       <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-    <input name="last_name" placeholder="Nombres" class="form-control"  type="text" ng-model="user.name">
+    <input name="names" placeholder="Nombres" class="form-control"  type="text" ng-model="user.names">
       </div>
     </div>
   </div>
@@ -16,7 +16,7 @@
       <div class="col-md-4 inputGroupContainer">
       <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-    <input name="last_name" placeholder="Apellidos" class="form-control"  type="text" ng-model="user.last_name">
+    <input name="surnames" placeholder="Apellidos" class="form-control"  type="text" ng-model="user.surnames">
       </div>
     </div>
   </div>
@@ -26,7 +26,7 @@
       <div class="col-md-4 inputGroupContainer">
       <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-    <input name="last_name" placeholder="Identificación" class="form-control"  type="text" ng-model="user.id">
+    <input name="identification" placeholder="Identificación" class="form-control"  type="text" ng-model="user.identification">
       </div>
     </div>
   </div>
@@ -36,7 +36,7 @@
       <div class="col-md-4 inputGroupContainer">
       <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-    <select name="last_name" placeholder="Tipo de Documento:" class="form-control"  ng-options="type for type in id_type" ng-model="user.id_type"></select>
+    <select name="id_type" placeholder="Tipo de Documento:" class="form-control"  ng-options="type for type in id_type" ng-model="user.id_type"></select>
       </div>
     </div>
   </div>
@@ -46,7 +46,7 @@
       <div class="col-md-4 inputGroupContainer">
       <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-    <input name="last_name" placeholder="País" class="form-control"  type="text" ng-model="user.country">
+    <input name="country" placeholder="País" class="form-control"  type="text" ng-model="user.country">
       </div>
     </div>
   </div>
@@ -56,7 +56,7 @@
       <div class="col-md-4 inputGroupContainer">
       <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-    <input name="last_name" placeholder="Email" class="form-control"  type="text" ng-model="user.email">
+    <input name="email" placeholder="Email" class="form-control"  type="email" ng-model="user.email">
       </div>
     </div>
   </div>
@@ -66,7 +66,7 @@
       <div class="col-md-4 inputGroupContainer">
       <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-    <select name="last_name" placeholder="Rol" class="form-control" type="text" ng-options="rol for rol in roles" ng-model="user.role" ng-change="selectedItemChanged()"> </select>
+    <select name="role" placeholder="Rol" class="form-control" type="text" ng-options="rol for rol in roles" ng-model="user.role" ng-change="selectedItemChanged()"> </select>
       </div>
     </div>
   </div>
@@ -76,7 +76,7 @@
       <div class="col-md-4 inputGroupContainer">
       <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-    <input name="last_name" ng-click="driver()" placeholder="Contraseña" class="form-control" type="password" ng-model="user.password">
+    <input name="password" ng-click="driver()" placeholder="Contraseña" class="form-control" type="password" ng-model="user.password">
       </div>
     </div>
   </div>
@@ -86,7 +86,7 @@
       <div class="col-md-4 inputGroupContainer">
       <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-    <input name="last_name" placeholder="Repita Contraseña" class="form-control"  type="password" ng-model="user.password_confirmation">
+    <input name="password_confirmation" placeholder="Repita Contraseña" class="form-control"  type="password" ng-model="user.password_confirmation">
       </div>
     </div>
   </div>
@@ -94,7 +94,7 @@
   <div class="form-group">
     <label class="col-md-4 control-label"></label>
     <div class="col-md-4">
-      <button class="btn btn-warning" ng-click="add(event)" >Aceptar <span class="glyphicon glyphicon-send"></span></button>
+      <button class="btn btn-warning" ng-click="add(user)" >Aceptar <span class="glyphicon glyphicon-send"></span></button>
     </div>
   </div>
 
