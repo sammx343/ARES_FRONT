@@ -4,13 +4,14 @@ angular.module('ares')
     List: function(){
       return $http({method: 'GET', url: URL.LINK + "/users"})
     },
-    Get : function(id, invites){
-      return invites.filter(function(invited){
-        return invited.id == id;
-      })
+    Show : function(id, invites){
+      return $http({method: 'GET', url: URL.LINK + "/users/" + id})
     },
     Create : function(user){
       return $http({method: 'POST', url: URL.LINK + "/users", data: {user}})
+    },
+    Delete : function(id){
+      return $http({method: 'DELETE', url: URL.LINK + "/users/" + id})
     }
   }
 }]);

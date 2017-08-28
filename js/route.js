@@ -12,9 +12,9 @@ angular.module("ares")
       templateUrl: 'templates/user/new.html',
       controller: 'UserCreateController'
   })
-  .when('/list/:id',{
-      templateUrl: 'templates/card.html',
-      controller: 'CardController'
+  .when('/users/:id',{
+      templateUrl: 'templates/user/show.html',
+      controller: 'UserShowController'
   })
   .when('/events',{
       templateUrl: 'templates/event/index.html',

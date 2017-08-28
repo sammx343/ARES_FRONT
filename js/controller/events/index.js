@@ -14,6 +14,7 @@ angular.module('ares')
       confirmButtonText: "Aceptar",
       closeOnConfirm: false
     },
+    //ESTA FUNCIÓN PERMITE LEER UN ARCHIVO Y ENVIARLO COMO POST
     function(){
       var fd = new FormData();
       fd.append("file", files[0]);
@@ -23,9 +24,10 @@ angular.module('ares')
           headers: {'Content-Type': undefined },
           transformRequest: angular.identity
       }).then(function successCallback(response) {
-
-          console.log(response.status);
-        },  function errorCallback(response) {
+          swal({title: "Archivo envíado", 
+            type: "success"
+          });
+        },function errorCallback(response) {
           swal({
             title: "Error",
             text: "Hubo un error",
@@ -41,7 +43,6 @@ angular.module('ares')
   };
 
   Event.List().then(function(data){
-
     $scope.events = data.data;
     console.log($scope.events);
   });

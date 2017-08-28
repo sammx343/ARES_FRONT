@@ -20,6 +20,16 @@ function($scope, $route ,$routeParams, $location, User){
       user.password_confirmation = "abcdefgh";
     }
     console.log(user);
-    User.Create(user);
+    User.Create(user).then(function(data){
+      console.log(data);
+      swal({
+        title: "Usuario Creado",
+        type: "success"
+      },
+      function(){
+        $location.path("/users");
+        $route.reload();
+      });
+    });
   }
 }]);
