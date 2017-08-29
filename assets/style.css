@@ -196,6 +196,10 @@ p{
   margin-top: 40px;
 }
 
+.list-group .row a{
+  color: #000000;
+}
+
 .main-info {
   padding: 10px 10px 90px 15px;
   background: #FEF3E9;
@@ -294,9 +298,12 @@ p{
 }
 
 .sidebar-module-inset ul li{
- list-style: none;
  font-size: 16px;
  padding: 15px 0px 15px 60px;
+}
+
+.sidebar-module-inset ul li, .list-group ul li{
+ list-style: none;
 }
 
 .sidebar-module-inset ul li:hover{

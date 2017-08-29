@@ -7,12 +7,7 @@ angular.module('ares')
 
   User.Show($routeParams.id).then(function(data){
     $scope.invited = data.data.user;
-    var acts = $scope.invited.user_activities;
-    acts.forEach(function(act){
-      Activity.Show(act.activity_id).then(function(data){
-        $scope.activities.push(data.data.activity);
-      });
-    });
+    var events = $scope.invited.events;
   });
 
   $scope.deleteUser = function(){

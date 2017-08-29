@@ -9,15 +9,20 @@
 <!-- <img src="assets/placehold.gif" alt="Avatar" style="width:100%; height: 46px">-->
 </div>
 
-<div class="list-group" ng-if="activities.length>0">
-  <h2> El usuario se encuentra inscrito en las siguientes actividades: </h2>
-  <a ng-repeat="activity in activities" href="#!events/{{event.id}}/activities/{{activity.id}}" class="list-group-item">
-    <h4 class="list-group-item-heading"> {{activity.name}} </h4>
-    <p class="list-group-item-text"> Hora de Inicio: {{activity.initial_time | date:'medium'}}</p>
-    <p class="list-group-item-text"> Hora de Finalización: {{activity.final_time | date:'medium'}}</p>
-    <p class="list-group-item-text"> Capacidad Max.: {{activity.quota}}</p>
-    <p class="list-group-item-text"> Capacidad Actual: {{activity.current_quota}}</p>
-  </a>
+<div class="list-group" ng-if="invited.events.length>0">
+  <h2> El usuario se encuentra inscrito en los siguientes eventos y las siguientes actividades: </h2> 
+  <ul class="list-group-item">
+    <li ng-repeat="event in invited.events">
+      <a href="#!events/{{event.event.id}}"> <h3 class="list-group-item-heading"> {{event.event.name}} </h3></a>
+      <ul>
+        <li ng-repeat="activity in event.activities"> 
+          <div class="row">
+            <a href="#!events/{{event.event.id}}/activities/{{activity.activity.id}}"> <h4> {{activity.activity.name}} </h4> </a> 
+          </div>
+        </li>
+      </ul>
+    </li>
+  </ul>
 </div>
 
 <div class="slide-bottom-change">

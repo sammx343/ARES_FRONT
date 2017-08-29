@@ -18,7 +18,7 @@
     <p class="list-group-item-text"> Hora de Inicio: {{activity.initial_time | date:'medium'}}</p>
     <p class="list-group-item-text"> Hora de Finalización: {{activity.final_time | date:'medium'}}</p>
     <p class="list-group-item-text"> Capacidad Max.: {{activity.quota}}</p>
-    <p class="list-group-item-text"> Capacidad Actual: {{activity.current_quota}}</p>
+    <p class="list-group-item-text"> Personas Registradas: {{activity.current_quota || 0}}</p>
   </a>
 </div>
 

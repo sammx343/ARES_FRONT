@@ -7,6 +7,7 @@ angular.module('ares')
 
   Activity.Show($routeParams.id).then(function(data){
     $scope.activity = data.data.activity;
+    console.log($scope.activity);
   });
 
   $scope.deleteActivity = function(){

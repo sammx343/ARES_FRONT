@@ -9,20 +9,7 @@ angular.module('ares')
 
   var retrieve = function(){
     User.List().then(function(data){
-      $scope.sessions = [0,0,0];
       $scope.invites = data.data;
-
-      for(var i = 0; i< $scope.invites.length; i++){
-
-        var act = $scope.invites[i].activities;
-
-        for(var j = 0; j< act.length; j++ ){
-
-          if(act[j].assisted == 1){
-            $scope.sessions[j] = $scope.sessions[j] + 1;
-          }
-        }      
-      }
     });
     
     /*f($scope.th){

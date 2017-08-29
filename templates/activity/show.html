@@ -1,6 +1,9 @@
 <div class="row">
   <div class="col-sm-3">
-    <a href="#!events/{{event_id}}/activities/{{activity.id}}/edit"> Editar Evento </a>
+    <a href="#!events/{{event_id}}"> Volver </a>
+  </div>
+  <div class="col-sm-3">
+    <a href="#!events/{{event_id}}/activities/{{activity.id}}/edit"> Editar Actividad </a>
   </div>
 </div>
 
@@ -12,7 +15,7 @@
 <p class="list-group-item-text"> Hora de Inicio: {{activity.initial_time | date:'medium'}}</p>
 <p class="list-group-item-text"> Hora de Finalización: {{activity.final_time | date:'medium'}}</p>
 <p class="list-group-item-text"> Capacidad Max.: {{activity.quota}}</p>
-<p class="list-group-item-text"> Capacidad Actual: {{activity.current_quota}}</p>
+<p class="list-group-item-text"> Personas Registradas: {{activity.current_quota || 0}}</p>
 
 <div class="slide-bottom-change">
   <button type="submit" class="btn btn-danger" ng-click="deleteActivity()">Eliminar Evento </button>

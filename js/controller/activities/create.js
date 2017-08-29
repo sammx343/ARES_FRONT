@@ -7,6 +7,7 @@ function($scope, $route ,$routeParams, $location, Activity){
   $scope.add = function(activity){
     activity.event_id = $routeParams.id;
     $location.path("/events/" + $routeParams.id);
+    console.log(activity);
     Activity.Create(activity);
     $route.reload();
   }
