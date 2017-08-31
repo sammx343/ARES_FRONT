@@ -1,0 +1,14 @@
+<div id="exportable">
+  <table class="table table-bordered">
+    <tr>
+      <th> No. </th>
+      <th> Nombre </th>
+      <th> Email </th>
+    </tr>
+    <tr ng-repeat="invited in invites | filter:searchText">
+      <th scope="row"> {{$index + 1}}</td>
+      <td> <a href="#!users/{{invited.id}}"> {{invited.full_name}}</a> </td>
+      <td> <p> {{invited.email}} </p> </td>
+    </tr>
+  </table>
+</div>

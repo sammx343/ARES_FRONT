@@ -28,6 +28,10 @@ angular.module("ares")
       templateUrl: 'templates/event/show.html',
       controller: 'EventShowController'
   })
+  .when('/events/:id/users',{
+      templateUrl: 'templates/event/users.html',
+      controller: 'EventUsersController'
+  })
   .when('/events/edit/:id',{
       templateUrl: 'templates/event/update.html',
       controller: 'EventUpdateController'
