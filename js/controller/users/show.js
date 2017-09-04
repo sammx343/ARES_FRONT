@@ -7,6 +7,7 @@ angular.module('ares')
 
   User.Show($routeParams.id).then(function(data){
     $scope.invited = data.data.user;
+    console.log($scope.invited);
     var events = $scope.invited.events;
   });
 

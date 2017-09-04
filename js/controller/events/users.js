@@ -1,8 +1,8 @@
 angular.module('ares')
-.controller("EventUsersController", ['$scope', '$route' ,'$routeParams', '$location', 'Event', 
-function($scope, $route ,$routeParams, $location, Event){
+.controller("EventUsersController", ['$scope', '$route' ,'$routeParams', '$location', 'Event', 'User',
+function($scope, $route ,$routeParams, $location, Event, User){
 
-  console.log("TTTT");
+  $scope.invites = [];
   $scope.event = {};
 
   $scope.add = function(event){
@@ -11,4 +11,8 @@ function($scope, $route ,$routeParams, $location, Event){
     $location.path("/events");
     $route.reload();
   }
+
+  User.List().then(function(data){
+    $scope.invites = data.data;
+  });
 }]);

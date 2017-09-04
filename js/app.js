@@ -1,2 +1,2 @@
 angular.module("ares", 
-	['ngRoute']);
+	['ngRoute', 'ngTable']);
