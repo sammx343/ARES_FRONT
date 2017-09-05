@@ -11,6 +11,7 @@
             <p>{{user.email}}</p> </td>
         <td title="'Identificación'" filter="{ identification: 'number'}" sortable="'age'">
             <p>{{user.identification}}</p> </td>
+        <td> <input ng-model="added" type="checkbox" ng-change="addUsers(user)" </td>
     </tr>
   </table>
 </div>
