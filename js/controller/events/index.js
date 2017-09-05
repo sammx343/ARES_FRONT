@@ -1,11 +1,7 @@
 angular.module('ares')
 .controller("EventIndexController", ['$scope', '$routeParams', 'Event', 'URL', '$http',
   function($scope, $routeParams, Event, URL, $http){
-  alert("EEFEF");
-  $scope.events = {}
-  var self = this;
-  var data = [{name: "Moroni", age: 50} /*,*/];
-  self.tableParams = new NgTableParams({}, { dataset: data});
+  $scope.events = {};
 
   $scope.uploadFile = function(files) {
     swal({
