@@ -16,6 +16,9 @@ angular.module('ares')
     },
     Delete : function(id){
       return $http({method: 'DELETE', url: URL.LINK + "/events/" + id})
+    },
+    AddUser : function(user_event){
+      return $http({method: 'POST', url: URL.LINK + "/events/linkuser", data: {user_event}})
     }
   }
 }]);
