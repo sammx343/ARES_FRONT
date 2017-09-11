@@ -1,11 +1,14 @@
 angular.module('ares')
-.controller("EventShowController", ['$scope', '$route', '$routeParams', '$location', 'Event', 
-function($scope, $route, $routeParams, $location, Event, URL){
+.controller("EventShowController", ['$scope', '$route', '$routeParams', '$location', 'Event', 'URL', 'NgTableParams',
+function($scope, $route, $routeParams, $location, Event, URL, NgTableParams){
 
   console.log($routeParams.id);
   $scope.event = {}
+
   Event.Show($routeParams.id).then(function(data){
     $scope.event = data.data.event;
+    console.log($scope.event.users);
+    $scope.tp = new NgTableParams({ count: 10 }, { counts: [5, 10, 20], dataset: $scope.event.users});
   });
 
   $scope.deleteEvent = function(){

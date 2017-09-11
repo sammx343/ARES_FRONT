@@ -15,6 +15,10 @@
 <p> Fecha de Finalización: {{event.final_date | date:'medium'}} </p>
 <a href="{{event.url}}"> Ingresa aquí: Página del evento </a>
 
+<div class="slide-bottom-change">
+  <button type="submit" class="btn btn-danger" ng-click="deleteEvent()" >Eliminar Evento </button>
+</div>
+
 <div class="list-group">
   <a ng-repeat="activity in event.activities" href="#!events/{{event.id}}/activities/{{activity.id}}" class="list-group-item">
     <h4 class="list-group-item-heading"> {{activity.name}} </h4>
@@ -25,6 +29,16 @@
   </a>
 </div>
 
-<div class="slide-bottom-change">
-  <button type="submit" class="btn btn-danger" ng-click="deleteEvent()" >Eliminar Evento </button>
-</div>
+<h2> Lista de Usuarios </h2>
+<table ng-table="tp" class="table" show-filter="true">
+  <tr ng-repeat="user in $data">
+      <td title="'Nombre'" filter="{ full_name: 'text'}" sortable="'full_name'">
+          <a href="#!users/{{invited.id}}"> {{user.names}} {{user.surnames}}</a> </td>
+      <td title="'Correo'" filter="{ email: 'number'}" sortable="'email'">
+          <p>{{user.email}}</p> </td>
+      <td title="'Identificación'" filter="{ identification: 'number'}" sortable="'age'">
+          <p>{{user.identification}}</p> </td>
+      <td> <input ng-model="user.marked" ng-checked="user.marked" type="checkbox" ng-change="addUsers(user)" </td>
+  </tr>
+</table>
+

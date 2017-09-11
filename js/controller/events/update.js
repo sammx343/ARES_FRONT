@@ -14,6 +14,5 @@ function($scope, $filter, $route, $routeParams, $location, Event){
     Event.Update(event, $routeParams.id);
     $location.path("/events/" + $routeParams.id);
     $route.reload();
-    console.log("coso");
   }
 }]);
