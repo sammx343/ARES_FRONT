@@ -13,5 +13,6 @@ angular.module('ares')
 
   $scope.deleteUser = function(){
     console.log("message");
+    
   }
 }]);

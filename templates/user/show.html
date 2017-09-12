@@ -13,11 +13,11 @@
   <h2> El usuario se encuentra inscrito en los siguientes eventos y las siguientes actividades: </h2> 
   <ul class="list-group-item">
     <li ng-repeat="event in invited.events">
-      <a href="#!events/{{event.event.id}}"> <h3 class="list-group-item-heading"> {{event.event.name}} </h3></a>
+      <a href="#!events/{{event.id}}"> <h3 class="list-group-item-heading"> {{event.name}} </h3></a>
       <ul>
         <li ng-repeat="activity in event.activities"> 
           <div class="row">
-            <a href="#!events/{{event.event.id}}/activities/{{activity.activity.id}}"> <h4> {{activity.activity.name}} </h4> </a> 
+            <a href="#!events/{{event.id}}/activities/{{activity.activity.id}}"> <h4> {{activity.activity.name}} </h4> </a> 
           </div>
         </li>
       </ul>
