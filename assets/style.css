@@ -107,6 +107,10 @@ h1{
   color: #FFFFFF;
 }
 
+.container h1{
+  color: #000000;
+}
+
 h3{
   font-size: 20px;
 }
@@ -117,7 +121,7 @@ img.mini-profile-photo.col-sm-4 {
 }
 
 nav.navbar.navbar-default {
-  background: #32271E;
+  background: #FFFFFF;
 }
 
 nav.navbar.navbar-default p, nav.navbar.navbar-default li a{

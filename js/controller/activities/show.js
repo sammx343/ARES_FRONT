@@ -4,11 +4,12 @@ angular.module('ares')
 
   $scope.activity = {};
   $scope.event_id = $routeParams.event_id;
+  console.log($scope.event_id);
 
   Activity.Show($routeParams.id).then(function(data){
     $scope.activity = data.data.activity;
-    $scope.tp = new NgTableParams({ count: 10 }, { counts: [5, 10, 20], dataset: $scope.activity.users});
-    console.log($scope.activity);
+    $scope.tp = new NgTableParams({ count: 10 }, { counts: [5, 10, 20], dataset: $scope.activity.users_activities});
+    console.log($scope.activity.users_activities);
   });
 
   $scope.deleteActivity = function(){
@@ -33,4 +34,30 @@ angular.module('ares')
       });
     });
   };
+
+  $scope.deleteUser = function(id){
+    console.log(id);
+    var user_activity = {
+      "id" : id
+    }
+    swal({
+      title: "Se eliminará al usuario de esta actividad",
+      type: "warning",
+      showCancelButton: true,
+      cancelButtonText: "Cancelar",
+      confirmButtonClass: "btn-danger",
+      confirmButtonText: "Aceptar",
+      closeOnConfirm: false
+    },
+    function(){
+      $location.path("/events/" + $routeParams.event_id + "/activities/" + $routeParams.id);
+      $route.reload();
+      Activity.DeleteUser(user_activity).then(function(data){
+        swal({title: "Borrado", 
+              text: "El evento ha sido borrado", 
+              type: "success"
+            });
+      });
+    });
+  }
 }]);

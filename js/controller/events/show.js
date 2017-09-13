@@ -7,7 +7,6 @@ function($scope, $route, $routeParams, $location, Event, URL, NgTableParams){
 
   Event.Show($routeParams.id).then(function(data){
     $scope.event = data.data.event;
-    console.log($scope.event);
     $scope.tp = new NgTableParams({ count: 10 }, { counts: [5, 10, 20], dataset: $scope.event.user_events});
   });
 
@@ -51,7 +50,6 @@ function($scope, $route, $routeParams, $location, Event, URL, NgTableParams){
     function(){
       //$location.path("/events");
       //$route.reload();
-      console.log(user_event);
       Event.DeleteUser(id).then(function(data){
         swal({title: "Borrado", 
               text: "El evento ha sido borrado", 

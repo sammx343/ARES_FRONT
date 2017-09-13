@@ -48,4 +48,9 @@ angular.module("ares")
       templateUrl: 'templates/activity/update.html',
       controller: 'ActivitiesUpdateController'
   })
+
+  .when('/events/:event_id/activities/:id/users',{
+      templateUrl: 'templates/activity/users.html',
+      controller: 'ActivityUsersController'
+  })
 });
