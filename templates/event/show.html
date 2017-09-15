@@ -22,6 +22,7 @@
 <div class="list-group">
   <a ng-repeat="activity in event.activities" href="#!events/{{event.id}}/activities/{{activity.id}}" class="list-group-item">
     <h4 class="list-group-item-heading"> Nombre Actividad: {{activity.name}} </h4>
+    <h4 class="list-group-item-heading"> Código de Actividad: {{activity.id}} </h4>
     <p class="list-group-item-text"> Hora de Inicio: {{activity.initial_time | date:'medium'}}</p>
     <p class="list-group-item-text"> Hora de Finalización: {{activity.final_time | date:'medium'}}</p>
     <p class="list-group-item-text"> Capacidad Max.: {{activity.quota}}</p>
@@ -30,6 +31,7 @@
 </div>
 
 <h2> Lista de Usuarios Inscritos</h2>
+<h3> <a href="#!events/{{event.id}}/asistencia"> Revisar asistencia de usuarios</a> </h3>
 <table ng-table="tp" class="table" show-filter="true">
   <tr ng-repeat="user_event in $data">
       <!--<td> {{user_event.user}}</td>-->

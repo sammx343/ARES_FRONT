@@ -29,7 +29,7 @@ angular.module("ares")
       controller: 'EventShowController'
   })
   .when('/events/:id/users',{
-      templateUrl: 'templates/event/users.html',
+      templateUrl: 'templates/event/addUsers.html',
       controller: 'EventUsersController'
   })
   .when('/events/edit/:id',{

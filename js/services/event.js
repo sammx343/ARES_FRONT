@@ -21,9 +21,7 @@ angular.module('ares')
       return $http({method: 'POST', url: URL.LINK + "/events/linkuser", data: {user_event}})
     },
     DeleteUser : function(id){
-      console.log({"id" : 40});
-      console.log("no està borrando");
-      return $http({method: 'DELETE', url: URL.LINK + "/events/linkuser", data: {"id" : 40}})
+      return $http({method: 'POST', url: URL.LINK + "/events/linkuser/delete", data: {"id" : id}})
     }
   }
 }]);

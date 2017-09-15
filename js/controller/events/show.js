@@ -22,13 +22,13 @@ function($scope, $route, $routeParams, $location, Event, URL, NgTableParams){
       closeOnConfirm: false
     },
     function(){
-      $location.path("/events");
-      $route.reload();
       Event.Delete($routeParams.id).then(function(data){
         swal({title: "Borrado", 
               text: "El evento ha sido borrado", 
               type: "success"
-            });
+            });  
+      $location.path("/events");
+      $route.reload();
       });
     });
   };
@@ -48,13 +48,13 @@ function($scope, $route, $routeParams, $location, Event, URL, NgTableParams){
       closeOnConfirm: false
     },
     function(){
-      //$location.path("/events");
-      //$route.reload();
       Event.DeleteUser(id).then(function(data){
         swal({title: "Borrado", 
               text: "El evento ha sido borrado", 
               type: "success"
             });
+        $location.path("/events");
+        $route.reload();
       });
     });
   }

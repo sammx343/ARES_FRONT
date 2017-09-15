@@ -33,7 +33,8 @@ function($scope, $route ,$routeParams, $location, Event, User, NgTableParams){
       }
       Event.AddUser(user_event).then(
         function success(data){
-          
+          $location.path("/events/" + $routeParams.id);
+          $route.reload();
       },function error(response) {
         if(response.status == 422)
           userError.push(user);
@@ -47,8 +48,7 @@ function($scope, $route ,$routeParams, $location, Event, User, NgTableParams){
       swal({title: "Usuario Agregado", 
         type: "success"
       });
-      $location.path("/events/" + $routeParams.id);
-      $route.reload();
+      
     }
   }
 
