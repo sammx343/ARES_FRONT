@@ -32,6 +32,10 @@ angular.module("ares")
       templateUrl: 'templates/event/addUsers.html',
       controller: 'EventUsersController'
   })
+  .when('/events/:id/asistencia',{
+      templateUrl: 'templates/event/assistance.html',
+      controller: 'EventAssistanceController'
+  })
   .when('/events/edit/:id',{
       templateUrl: 'templates/event/update.html',
       controller: 'EventUpdateController'
@@ -48,7 +52,6 @@ angular.module("ares")
       templateUrl: 'templates/activity/update.html',
       controller: 'ActivitiesUpdateController'
   })
-
   .when('/events/:event_id/activities/:id/users',{
       templateUrl: 'templates/activity/users.html',
       controller: 'ActivityUsersController'

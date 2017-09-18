@@ -1,0 +1,16 @@
+<h2> Lista de Asistencia </h2>
+
+<table ng-table="tp" class="table" show-filter="true">
+  <tr ng-repeat="user_event in $data">
+      <!--<td> {{user_event.user}}</td>-->
+      <td> <span class="glyphicon glyphicon-remove" aria-hidden="true" ng-click="deleteUser(user_event.id)" style="cursor:pointer"> </span> </td>
+      <td title="'Nombre'" filter="{ full_name: 'text'}" sortable="'full_name'">
+          <a href="#!users/{{user_event.user.id}}"> {{user_event.user.full_name}}</a> </td>
+      <td title="'Correo'" filter="{ email: 'number'}" sortable="'email'">
+          <p>{{user_event.user.email}}</p> </td>
+      <td title="'Identificación'" filter="{ identification: 'number'}" sortable="'age'">
+          <p>{{user_event.user.identification}}</p> </td>
+      <td ng-repeat="activity in event.activities" title="'Identificación'" filter="{ identification: 'number'}" sortable="'age'">
+          <p>{{user_event.user.identification}}</p> </td>
+  </tr>
+</table>
