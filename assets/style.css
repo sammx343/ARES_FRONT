@@ -134,6 +134,10 @@ p{
   padding: 0;
 }
 
+.big-table{
+  background: #FFFFFF;
+}
+
 .btn-twitter {
   background: #DA7833;
   border-radius: 5px;

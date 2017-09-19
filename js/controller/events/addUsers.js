@@ -5,6 +5,10 @@ function($scope, $route ,$routeParams, $location, Event, User, NgTableParams){
   $scope.event = {};
   $scope.usersToAdd = [];
 
+  Event.Show($routeParams.id).then(function(data){
+    $scope.event = data.data.event;
+  });
+
   $scope.addUsers = function(user){
     var index;
     var addUser;
@@ -25,31 +29,28 @@ function($scope, $route ,$routeParams, $location, Event, User, NgTableParams){
   }
 
   $scope.sendUsers = function(){
-    var userError = [];
+    var userEvents = [];
+
     $scope.usersToAdd.forEach(function mapUsers(user, index){
       var user_event = {
         "user_id" : user.id,
         "event_id": $routeParams.id
       }
-      Event.AddUser(user_event).then(
-        function success(data){
-          $location.path("/events/" + $routeParams.id);
-          $route.reload();
-      },function error(response) {
-        if(response.status == 422)
-          userError.push(user);
-      });
+      userEvents.push(user_event);
     });
-    if(userError.length>0){
-      swal({title: "Hubo un error agregando ", 
+
+    Event.AddUser(userEvents).then(
+      function success(data){
+        swal({title: "Usuario Agregado", 
+          type: "success"
+        });
+        $location.path("/events/" + $routeParams.id);
+        $route.reload();
+    },function error(response) {
+      swal({title: "Hubo un error agregando " + response.data.length + " usuarios", 
         type: "error"
       });
-    }else{
-      swal({title: "Usuario Agregado", 
-        type: "success"
-      });
-      
-    }
+    });
   }
 
   User.List().then(function(data){

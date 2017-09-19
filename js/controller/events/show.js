@@ -7,7 +7,7 @@ function($scope, $route, $routeParams, $location, Event, URL, NgTableParams){
 
   Event.Show($routeParams.id).then(function(data){
     $scope.event = data.data.event;
-    $scope.tp = new NgTableParams({ count: 10 }, { counts: [5, 10, 20], dataset: $scope.event.user_events});
+    $scope.tp = new NgTableParams({ count: 10 }, { counts: [5, 10, $scope.event.user_events.length], dataset: $scope.event.user_events});
   });
 
   $scope.deleteEvent = function(){
@@ -39,7 +39,7 @@ function($scope, $route, $routeParams, $location, Event, URL, NgTableParams){
       "id" : id
     }
     swal({
-      title: "Se eliminará este usuario del evento",
+      title: "Se desvinculará este usuario del evento",
       type: "warning",
       showCancelButton: true,
       cancelButtonText: "Cancelar",
@@ -49,11 +49,10 @@ function($scope, $route, $routeParams, $location, Event, URL, NgTableParams){
     },
     function(){
       Event.DeleteUser(id).then(function(data){
-        swal({title: "Borrado", 
-              text: "El evento ha sido borrado", 
+        swal({title: "El usuario ha sido desvinculado", 
               type: "success"
             });
-        $location.path("/events");
+        $location.path("/events/" + $routeParams.id);
         $route.reload();
       });
     });
