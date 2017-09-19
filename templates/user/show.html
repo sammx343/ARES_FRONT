@@ -1,13 +1,20 @@
+<div class="row">
+  <div class="col-sm-3">
+    <a href="#!users/{{invited.id}}/edit"> Editar Evento </a>
+  </div>
+</div>
 <div class="card">
  <!--<img src="assets/header.png" style="width:100%; height: 100px">-->
  <div>
-   <h2><b>{{invited.full_name}}</b></h2> 
+   <h2><b>{{invited.names}} {{invited.surnames}}</b></h2> 
    <p> {{invited.identification}} </p>
    <p>Barranquilla, Colombia</p> 
   <img id="qr" src="{{invited.qr}}">
  </div>
 <!-- <img src="assets/placehold.gif" alt="Avatar" style="width:100%; height: 46px">-->
 </div>
+
+<h2> <a href="#!users/{{invited.id}}/linkuser"> Agregar Eventos y Actividades al usuario </a> </h2>
 
 <div class="list-group" ng-if="invited.events.length>0">
   <h2> El usuario se encuentra inscrito en los siguientes eventos y las siguientes actividades: </h2> 

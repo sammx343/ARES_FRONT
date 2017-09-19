@@ -8,7 +8,7 @@ angular.module('ares')
 
   Activity.Show($routeParams.id).then(function(data){
     $scope.activity = data.data.activity;
-    $scope.tp = new NgTableParams({ count: 10 }, { counts: [5, 10, 20], dataset: $scope.activity.users_activities});
+    $scope.tp = new NgTableParams({ count: 10 }, { counts: [5, 10, $scope.activity.users_activities.length], dataset: $scope.activity.users_activities});
     console.log($scope.activity.users_activities);
   });
 
@@ -50,9 +50,9 @@ angular.module('ares')
       closeOnConfirm: false
     },
     function(){
-      $location.path("/events/" + $routeParams.event_id + "/activities/" + $routeParams.id);
-      $route.reload();
       Activity.DeleteUser(user_activity).then(function(data){
+        $location.path("/events/" + $routeParams.event_id);
+        $route.reload();
         swal({title: "Borrado", 
               text: "El evento ha sido borrado", 
               type: "success"

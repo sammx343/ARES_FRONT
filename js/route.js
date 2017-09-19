@@ -1,9 +1,9 @@
 angular.module("ares")
 .config(function($routeProvider){
-	$routeProvider.when('/' , {
+  $routeProvider.when('/' , {
     templateUrl: 'templates/event/index.html',
     controller: 'EventIndexController'
-	})
+  })
   .when('/users',{
       templateUrl: 'templates/user/index.html',
       controller: 'UserIndexController'
@@ -15,6 +15,14 @@ angular.module("ares")
   .when('/users/:id',{
       templateUrl: 'templates/user/show.html',
       controller: 'UserShowController'
+  })
+  .when('/users/:id/edit',{
+      templateUrl: 'templates/user/update.html',
+      controller: 'UserUpdateController'
+  })
+  .when('/users/:id/linkuser',{
+      templateUrl: 'templates/user/update.html',
+      controller: 'UserUpdateController'
   })
   .when('/events',{
       templateUrl: 'templates/event/index.html',

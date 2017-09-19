@@ -5,9 +5,6 @@ angular.module('ares')
       return $http({method: 'GET', url: URL.LINK + "/activities/" + id})
     },
     Create : function(activity){
-      /*alert("aqui hace un post");
-      console.log(activity);
-      alert(URL.LINK + "/activities");*/
       return $http({method: 'POST', url: URL.LINK + "/activities", data: {activity}})
     },
     Update : function(activity, id){
@@ -18,7 +15,7 @@ angular.module('ares')
       return $http({method: 'DELETE', url: URL.LINK + "/activities/" + id})
     },
     AddUser : function(user_activity){
-      return $http({method: 'POST', url: URL.LINK + "/activities/linkuser", data: {user_activity}})
+      return $http({method: 'POST', url: URL.LINK + "/activities/linkuser", data: user_activity})
     },
     DeleteUser : function(user_activity){
       console.log(user_activity);

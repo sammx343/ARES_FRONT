@@ -25,31 +25,28 @@ function($scope, $route ,$routeParams, $location, Event, Activity, User, NgTable
   }
 
   $scope.sendUsers = function(){
-    var userError = [];
+    var userActivities = [];
+
     $scope.usersToAdd.forEach(function mapUsers(user, index){
       var user_activity = {
         "user_id" : user.id,
         "activity_id": $routeParams.id
       }
-      Activity.AddUser(user_activity).then(
-        function success(data){
-          
-      },function error(response) {
-        if(response.status == 422)
-          userError.push(user);
-      });
+      userActivities.push(user_activity);
     });
-    if(userError.length>0){
-      swal({title: "Hubo un error agregando ", 
+    Activity.AddUser(userActivities).then(
+      function success(data){
+        swal({title: "Usuario Agregado", 
+          type: "success"
+        });
+        $location.path("/events/" + $routeParams.event_id + "/activities/" + $routeParams.id);
+        $route.reload();
+    },function error(response) {
+      console.log(response);
+      swal({title: "Hubo un error agregando " + response.config.data.user_activity.length + " usuarios", 
         type: "error"
       });
-    }else{
-      swal({title: "Usuario Agregado", 
-        type: "success"
-      });
-      $location.path("/events/" + $routeParams.event_id + "/activities/" + $routeParams.id);
-      $route.reload();
-    }
+    });
   }
 
   User.List().then(function(data){

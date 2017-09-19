@@ -1,0 +1,103 @@
+<h2> Crear Usuario </h2>
+
+<form class="well form-horizontal" id="contact_form">
+  <div class="form-group">
+    <label class="col-md-4 control-label" > Nombres: </label> 
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input name="names" placeholder="Nombres" class="form-control"  type="text" ng-model="user.names">
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-4 control-label" > Apellidos: </label> 
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input name="surnames" placeholder="Apellidos" class="form-control"  type="text" ng-model="user.surnames">
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-4 control-label" > No. Identificación: </label> 
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input name="identification" placeholder="Identificación" class="form-control"  type="text" ng-model="user.identification">
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-4 control-label" > Tipo de Documento: </label> 
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <select name="id_type" placeholder="Tipo de Documento:" class="form-control"  ng-options="type for type in id_type" ng-model="user.id_type"></select>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-4 control-label" > País: </label> 
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input name="country" placeholder="País" class="form-control"  type="text" ng-model="user.country">
+      </div>
+    </div>
+  </div>
+
+   <div class="form-group">
+    <label class="col-md-4 control-label" > Corréo Electrónico: </label> 
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input name="email" placeholder="Email" class="form-control"  type="email" ng-model="user.email">
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-4 control-label" > Rol: </label> 
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <select name="role" placeholder="Rol" class="form-control" type="text" ng-options="rol for rol in roles" ng-model="user.role" ng-change="selectedItemChanged()"> </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group" ng-if="rolIsAdmin">
+    <label class="col-md-4 control-label"> Contraseña </label> 
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input name="password" ng-click="driver()" placeholder="Contraseña" class="form-control" type="password" ng-model="user.password">
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group" ng-if="rolIsAdmin">
+    <label class="col-md-4 control-label"> Confirmar Contraseña </label> 
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input name="password_confirmation" placeholder="Repita Contraseña" class="form-control"  type="password" ng-model="user.password_confirmation">
+      </div>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label class="col-md-4 control-label"></label>
+    <div class="col-md-4">
+      <button class="btn btn-warning" ng-click="add(user)" >Aceptar <span class="glyphicon glyphicon-send"></span></button>
+    </div>
+  </div>
+
+</fieldset>
+</form>
+</div>
