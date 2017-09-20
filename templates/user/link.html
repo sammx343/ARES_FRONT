@@ -1,6 +1,6 @@
 <h1> Agregar Usuario a Evento o Actividad </h1>
 <div>
- <h2><b>{{user.names}} {{user.surnames}}</b></h2> 
+ <h2><a href="#!users/{{user.id}}">{{user.names}} {{user.surnames}}</a></h2> 
  <p> {{user.identification}} </p>
 </div>
 
@@ -19,7 +19,7 @@
 <div ng-if="selectedEvent == false" class="list-group">
   <h1> {{event.name}} </h1>
   <div class="row">
-    <button ng-click="sendLinkActivities()"> Enviar </button>
+    <button ng-if="activities.length > 0" ng-click="sendLinkActivities()"> Enviar </button>
     <div class="slide-bottom-change">
       <button type="submit" class="btn btn-danger" ng-click="cancelEventSelection()" > Cancelar Selección </button>
     </div>

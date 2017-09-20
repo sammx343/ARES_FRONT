@@ -1,6 +1,6 @@
 angular.module('ares')
-.controller("UserLinkController", ['$scope', '$routeParams', 'User', 'Activity', 'Event',
-  function($scope, $routeParams, User, Activity, Event){
+.controller("UserLinkController", ['$scope', '$route' ,'$routeParams', '$location', 'User', 'Activity', 'Event',
+  function($scope, $route ,$routeParams, $location,  User, Activity, Event){
 
   $scope.user = {};
   $scope.activities = [];
@@ -63,7 +63,7 @@ angular.module('ares')
         $route.reload();
     },function error(response) {
       console.log(response);
-      swal({title: "Hubo un error agregando " + response.config.data.user_activity.length + " usuarios", 
+      swal({title: "Hubo un error agregando " + response.data.length + " actividades", 
         type: "error"
       });
     });

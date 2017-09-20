@@ -36,10 +36,6 @@ angular.module('ares')
   };
 
   $scope.deleteUser = function(id){
-    console.log(id);
-    var user_activity = {
-      "id" : id
-    }
     swal({
       title: "Se eliminará al usuario de esta actividad",
       type: "warning",
@@ -50,11 +46,11 @@ angular.module('ares')
       closeOnConfirm: false
     },
     function(){
-      Activity.DeleteUser(user_activity).then(function(data){
-        $location.path("/events/" + $routeParams.event_id);
+      Activity.DeleteUser(id).then(function(data){
+        $location.path("/events/" + $routeParams.event_id + "/activities/"+ $routeParams.id);
         $route.reload();
         swal({title: "Borrado", 
-              text: "El evento ha sido borrado", 
+              text: "El usuario ha sido desvinculado", 
               type: "success"
             });
       });

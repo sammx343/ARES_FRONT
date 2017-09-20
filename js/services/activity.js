@@ -17,9 +17,8 @@ angular.module('ares')
     AddUser : function(user_activity){
       return $http({method: 'POST', url: URL.LINK + "/activities/linkuser", data: user_activity})
     },
-    DeleteUser : function(user_activity){
-      console.log(user_activity);
-      return $http({method: 'DELETE', url: URL.LINK + "/activities/linkuser", data: user_activity})
+    DeleteUser : function(id){
+      return $http({method: 'POST', url: URL.LINK + "/activities/linkuser/delete", data: {"id" : id}})
     }
   }
 }]);
