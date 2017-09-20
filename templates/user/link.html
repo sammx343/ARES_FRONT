@@ -1,0 +1,39 @@
+<h1> Agregar Usuario a Evento o Actividad </h1>
+<div>
+ <h2><b>{{user.names}} {{user.surnames}}</b></h2> 
+ <p> {{user.identification}} </p>
+</div>
+
+<div ng-if="selectedEvent" class="list-group">
+  <h2> Eventos </h2>
+  <h4> Haz click dentro de un evento para seleccionar las actividades </h4>
+  <div class="list-group-item" ng-repeat="event in events" >
+    <a href="#!events/{{event.id}}" target="_blank"> <h4> {{event.name}}</h4></a>
+    <div ng-click="getEvent(event)" style="cursor:pointer">
+      <p> Fecha de Inicio: {{event.initial_date | date:'medium'}} </p>
+      <p> Fecha de Finalización: {{event.final_date | date:'medium'}} </p>
+    </div>
+  </div>
+</div>
+
+<div ng-if="selectedEvent == false" class="list-group">
+  <h1> {{event.name}} </h1>
+  <div class="row">
+    <button ng-click="sendLinkActivities()"> Enviar </button>
+    <div class="slide-bottom-change">
+      <button type="submit" class="btn btn-danger" ng-click="cancelEventSelection()" > Cancelar Selección </button>
+    </div>
+  </div>
+  
+  <div class="list-group">
+    <h2> Actividades: </h2>
+    <div ng-repeat="activity in event.activities"  class="list-group-item">
+      <input ng-model="activity.marked" type="checkbox" ng-change="addActivity(activity)">
+      <a href="#!events/{{event.id}}/activities/{{activity.id}}" target="_blank"> <h4> {{activity.name}}</h4></a>
+      <p class="list-group-item-text"> Hora de Inicio: {{activity.initial_time | date:'medium'}}</p>
+      <p class="list-group-item-text"> Hora de Finalización: {{activity.final_time | date:'medium'}}</p>
+      <p class="list-group-item-text"> Capacidad Max.: {{activity.quota}}</p>
+      <p class="list-group-item-text"> Personas Registradas: {{activity.current_quota || 0}}</p>
+    </div>
+  </div>
+</div>

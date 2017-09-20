@@ -20,9 +20,9 @@ angular.module("ares")
       templateUrl: 'templates/user/update.html',
       controller: 'UserUpdateController'
   })
-  .when('/users/:id/linkuser',{
-      templateUrl: 'templates/user/update.html',
-      controller: 'UserUpdateController'
+  .when('/users/:id/link',{
+      templateUrl: 'templates/user/link.html',
+      controller: 'UserLinkController'
   })
   .when('/events',{
       templateUrl: 'templates/event/index.html',
