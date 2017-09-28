@@ -1,6 +1,6 @@
 angular.module('ares')
-.controller("UserShowController", ['$scope', '$routeParams', 'User', 'Activity',
-  function($scope, $routeParams, User, Activity){
+.controller("UserShowController", ['$scope', '$route', '$routeParams', '$location', 'User', 'Activity',
+  function($scope, $route, $routeParams, $location, User, Activity){
 
   $scope.invited = {};
   $scope.activities = [];
@@ -12,7 +12,13 @@ angular.module('ares')
   });
 
   $scope.deleteUser = function(){
-    console.log("message");
-    
+    User.Delete($scope.invited.id).then(function(data){
+        swal({title: "Borrado", 
+              text: "El usuario ha sido borrado", 
+              type: "success"
+        }); 
+        $location.path("/events");
+        $route.reload();
+    });
   }
 }]);
