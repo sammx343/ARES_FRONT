@@ -5,18 +5,10 @@ angular.module('ares')
   $scope.invites = [];
   $scope.th = true;
 
-  $scope.sessions = [0,0,0];
-
   var retrieve = function(){
     User.List().then(function(data){
       $scope.invites = data.data;
     });
-    
-    /*f($scope.th){
-      $timeout(retrieve, 5000);
-    }*/
-    //console.log("finish");
-    console.log($scope.sessions[0] + " " + $scope.sessions[1] + " " + $scope.sessions[2]);
   }
 
   $scope.change = function (){
@@ -25,7 +17,7 @@ angular.module('ares')
   }
 
   retrieve();
-
+  //No se toque esta mierda a menos que se esté seguro de lo que se hace
   $scope.exportData = function () {
       var blob = new Blob([document.getElementById('exportable').innerHTML], {
           type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8"

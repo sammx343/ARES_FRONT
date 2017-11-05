@@ -1,6 +1,7 @@
 <h2> Lista de Asistencia </h2>
 <h1> <a href="#!events/{{event.id}}"> Evento : {{event.name}} </a> </h1>
-
+<button ng-click="exportData()">Export</button>
+    <br />
 <table ng-table="tp" class="table" show-filter="true">
   <tr>
     <th> Nombre <input ng-model="name"></label> </th>
@@ -9,7 +10,7 @@
     <th ng-repeat="activity in event.activities"> {{activity.name}} </th>
   </tr>
   <tr ng-repeat="user_event in $data | filter:name | filter:identification">
-      <td> <a href="#!users/{{user_event.user.id}}"> {{user_event.user.full_name}}</a> </td>
+      <td> <a href="#!users/{{user_event.user.id}}"> {{user_event.user.names}} {{user_event.user.surnames}}</a> </td>
       <td> <p>{{user_event.user.email}}</p> </td>
       <td> <p>{{user_event.user.identification}}</p> </td>
       <td ng-repeat="activity in user_event.user.activities"> {{activity.assisted}} </td>

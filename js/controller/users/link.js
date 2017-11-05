@@ -53,7 +53,7 @@ angular.module('ares')
       }
       userActivities.push(user_activity);
     });
-    console.log(userActivities);
+
     Activity.AddUser(userActivities).then(
       function success(data){
         swal({title: "Actividades Enlazadas", 
@@ -62,7 +62,6 @@ angular.module('ares')
         $location.path("/users/" + $routeParams.id);
         $route.reload();
     },function error(response) {
-      console.log(response);
       swal({title: "Hubo un error agregando " + response.data.length + " actividades", 
         type: "error"
       });
@@ -72,5 +71,4 @@ angular.module('ares')
   $scope.cancelEventSelection = function(){
     $scope.selectedEvent = true;
   }
-
 }]);

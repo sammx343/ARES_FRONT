@@ -10,6 +10,9 @@ angular.module('ares')
     Create : function(user){
       return $http({method: 'POST', url: URL.LINK + "/users", data: {user}})
     },
+    Update : function(user, id){
+      return $http({method: 'PUT', url: URL.LINK + "/users/" + id, data: {user}})
+    },
     Delete : function(id){
       return $http({method: 'DELETE', url: URL.LINK + "/users/" + id})
     }

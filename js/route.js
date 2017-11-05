@@ -62,6 +62,6 @@ angular.module("ares")
   })
   .when('/events/:event_id/activities/:id/users',{
       templateUrl: 'templates/activity/users.html',
-      controller: 'ActivityUsersController'
+      controller: 'ActivityAddUsersController'
   })
 });

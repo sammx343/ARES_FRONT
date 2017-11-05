@@ -31,13 +31,15 @@
 </div>
 
 <h2> Lista de Usuarios Inscritos</h2>
-<h3> <a href="#!events/{{event.id}}/asistencia"> Revisar asistencia de usuarios</a> </h3>
+<h2> <a href="#!events/{{event.id}}/asistencia" style="color:#FF0000"> Revisar asistencia de usuarios y Generar reporte </a> </h2> 
 <table ng-table="tp" class="table" show-filter="true">
   <tr ng-repeat="user_event in $data">
   
       <td> <span class="glyphicon glyphicon-remove" aria-hidden="true" ng-click="deleteUser(user_event.id)" style="cursor:pointer"> </span> </td>
-      <td title="'Nombre'" filter="{ full_name: 'text'}" sortable="'full_name'">
-          <a href="#!users/{{user_event.user.id}}"> {{user_event.user.full_name}}</a> </td>
+      <td title="'Nombre'" filter="{ names: 'text'}" sortable="'names'">
+          <a href="#!users/{{user_event.user.id}}"> {{user_event.user.names}}</a> </td>
+      <td title="'Apellido'" filter="{ surnames: 'text'}" sortable="'surnames'">
+          <a href="#!users/{{user_event.user.id}}"> {{user_event.user.surnames}}</a> </td>
       <td title="'Correo'" filter="{ email: 'number'}" sortable="'email'">
           <p>{{user_event.user.email}}</p> </td>
       <td title="'Identificación'" filter="{ identification: 'number'}" sortable="'age'">

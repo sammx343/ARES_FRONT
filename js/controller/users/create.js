@@ -30,6 +30,23 @@ function($scope, $route ,$routeParams, $location, User){
         $location.path("/users");
         $route.reload();
       });
+    },
+    function(data){
+      var error = data.data.errors;
+      var message = "";
+
+      if(error.identification)
+        message = "Numero de identificación ya utilizado";
+      else if(error.email)
+        message = error.email;
+      else if(error.password)
+        message = "Contraseña " + error.password;
+      
+      console.log(data);
+      swal({title: "Error", 
+        type: "error",
+        text: message
+      });
     });
   }
 }]);

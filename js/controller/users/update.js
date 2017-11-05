@@ -27,16 +27,31 @@ function($scope, $route ,$routeParams, $location, User){
       user.password = "abcdefgh";
       user.password_confirmation = "abcdefgh";
     }
-    console.log(user);
-    User.Create(user).then(function(data){
-      console.log(data);
+    User.Update(user, $routeParams.id).then(function(data){
       swal({
-        title: "Usuario Creado",
+        title: "Usuario Editado",
         type: "success"
       },
       function(){
-        $location.path("/users");
+        $location.path("/users/" + $routeParams.id);
         $route.reload();
+      });
+    },
+    function(data){
+      var error = data.data.errors;
+      var message = "";
+
+      if(error.identification)
+        message = "Numero de identificación ya utilizado";
+      else if(error.email)
+        message = error.email;
+      else if(error.password)
+        message = "Contraseña " + error.password;
+      
+      console.log(data);
+      swal({title: "Error", 
+        type: "error",
+        text: message
       });
     });
   }

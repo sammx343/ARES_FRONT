@@ -17,7 +17,7 @@ angular.module('ares')
     function(){
       var fd = new FormData();
       fd.append("file", files[0]);
-      console.log(URL.LINK+"/users/import");
+      
       $http.post(URL.LINK+"/users/import", fd, {
           withCredentials: true,
           headers: {'Content-Type': undefined },

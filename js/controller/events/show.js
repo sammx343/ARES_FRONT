@@ -2,7 +2,6 @@ angular.module('ares')
 .controller("EventShowController", ['$scope', '$route', '$routeParams', '$location', 'Event', 'URL', 'NgTableParams',
 function($scope, $route, $routeParams, $location, Event, URL, NgTableParams){
 
-  console.log($routeParams.id);
   $scope.event = {}
 
   Event.Show($routeParams.id).then(function(data){
@@ -27,17 +26,18 @@ function($scope, $route, $routeParams, $location, Event, URL, NgTableParams){
               text: "El evento ha sido borrado", 
               type: "success"
             });  
-      $location.path("/events");
-      $route.reload();
+        $location.path("/events");
+        $route.reload();
+      },function(){
+        swal({title: "Error", 
+              text: "El evento no se pudo borrar", 
+              type: "error"
+            });
       });
     });
   };
 
   $scope.deleteUser = function(id){
-    console.log(id);
-    var user_event = {
-      "id" : id
-    }
     swal({
       title: "Se desvinculará este usuario del evento",
       type: "warning",
